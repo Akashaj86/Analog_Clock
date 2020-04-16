@@ -1,4 +1,2 @@
 # Analog_Clock
-An accurate and simple analog clock made with JavaScript
-
-This clock will keep realtime via the power of js and simple css styling
+This Project was created with the goal of keeping real-time with simple JavaScript, HTML, CSS. At any point in the futre, the user should be able to visit this page and read the current time on an analog clock.
