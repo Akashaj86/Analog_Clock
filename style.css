@@ -5,6 +5,11 @@
 
 body{
     background: linear-gradient(to right, hsl(216, 100%, 50%), hsl(192, 100%, 50%));
+    display: flex;
+    justify-content: center;
+    align-items: center; /*LINES 8-10 CENTER CLOCK HORIZONTALLY*/
+    min-height: 100vh; /*THIS BRINGS DOWN TO CENTER PGE (VIEW HEIGHT)*/
+    overflow: hidden; /*KEEPS PGE FROM HAVING A SCROLLBAR*/
 }
 
 .clock{
@@ -23,6 +28,7 @@ body{
     height: 100%; 
     text-align: center;
     transform: rotate(var(--rotation));
+    font-size: 1.5rem;
 }
 
 .clock .number1{ --rotation: 30deg; }
@@ -50,6 +56,19 @@ body{
     transform-origin: bottom;
     z-index: 10; /*ENSURES HAND IS ON TOP OF NUMBERS*/
     transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after{ /*THIS STYLES THE BLACK BUTTON FOR THE HANDS BASE*/
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11; /*THIS SETS THE BASE ATOP THE HANDS*/
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*THIS MAKES THE BASE CENTERED*/
+    border-radius: 50%;
 }
 
 .clock .hand.second{
